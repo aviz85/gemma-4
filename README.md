@@ -1,12 +1,12 @@
-# Qwen3.5 Playground
+# Gemma 4 Playground
 
-A fast, local web UI for chatting with and comparing [Qwen3](https://qwenlm.github.io/blog/qwen3/) models via [Ollama](https://ollama.com). Everything runs on your machine — no API keys, no cloud, 100% private.
+A fast, local web UI for chatting with and comparing [Gemma 4](https://ai.google.dev/gemma) models via [Ollama](https://ollama.com). Everything runs on your machine — no API keys, no cloud, 100% private.
 
 ## Features
 
 | | |
 |---|---|
-| 💬 **Chat** | Streaming responses with Qwen3's chain-of-thought thinking mode |
+| 💬 **Chat** | Streaming responses with Gemma 4's chain-of-thought thinking mode |
 | ⚖️ **Compare** | Run the same prompt across all models sequentially, side-by-side results |
 | 🗂️ **Conversation history** | Auto-saved to browser IndexedDB — persists across reloads |
 | 📊 **Metrics** | Tokens/sec, total tokens, duration per response |
@@ -14,20 +14,10 @@ A fast, local web UI for chatting with and comparing [Qwen3](https://qwenlm.gith
 | 🌙 **Dark / light mode** | Follows system preference, persisted in localStorage |
 | ⚡ **Preset prompts** | One-click benchmarks: math, code, reasoning, creative, multilingual |
 
-## Screenshots
-
-> Chat mode with thinking trace expanded
-
-![Chat](https://raw.githubusercontent.com/aviz85/qwen-3-5/main/docs/chat.png)
-
-> Compare mode — all models run sequentially
-
-![Compare](https://raw.githubusercontent.com/aviz85/qwen-3-5/main/docs/compare.png)
-
 ## Requirements
 
 - [Node.js](https://nodejs.org) 18+
-- [Ollama](https://ollama.com) running locally
+- [Ollama](https://ollama.com) v0.20.0+ running locally (Gemma 4 requires this version)
 
 ## 1 — Install Ollama
 
@@ -44,24 +34,23 @@ ollama serve
 
 ## 2 — Pull Models
 
-Pull whichever sizes fit your hardware. The app auto-detects all `qwen*` models.
+Pull whichever sizes fit your hardware. The app auto-detects all `gemma4*` models.
 
 ```bash
-ollama pull qwen3:0.6b    # ~400 MB  — fastest
-ollama pull qwen3:1.7b    # ~1.1 GB
-ollama pull qwen3:4b      # ~2.6 GB
-ollama pull qwen3:8b      # ~5.2 GB  — recommended for M-series Macs
-ollama pull qwen3:14b     # ~9 GB
-ollama pull qwen3:32b     # ~20 GB   — best quality, needs 32 GB+ RAM
+ollama pull gemma4:e2b   # 7.2 GB  — edge model, fastest
+ollama pull gemma4:e4b   # 9.6 GB  — edge model, default (recommended)
+ollama pull gemma4:26b   # 18 GB   — MoE, 4B active params, high quality
+ollama pull gemma4:31b   # 20 GB   — dense, best quality
 ```
 
 > **Apple Silicon:** Metal GPU acceleration is used automatically by Ollama.
+> All models support **text + image input** with 128K–256K context window.
 
 ## 3 — Run the App
 
 ```bash
-git clone https://github.com/aviz85/qwen-3-5.git
-cd qwen-3-5
+git clone https://github.com/aviz85/gemma-4.git
+cd gemma-4
 npm install
 npm run dev
 ```
@@ -72,7 +61,7 @@ Open [http://localhost:5173](http://localhost:5173).
 
 ### Chat Mode
 1. Select a model from the model bar
-2. Toggle **Thinking ON/OFF** — enables Qwen3's extended chain-of-thought reasoning
+2. Toggle **Thinking ON/OFF** — enables Gemma 4's extended chain-of-thought reasoning
 3. Type a message or pick a preset prompt (Enter to send, Shift+Enter for newline)
 4. Click the amber thinking block to expand/collapse the reasoning trace
 5. Conversations auto-save — browse history from the **☰ sidebar**

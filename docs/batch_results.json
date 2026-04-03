@@ -334,5 +334,77 @@
     "tokens": 1206,
     "duration_s": 61.43,
     "tps": 20.3
+  },
+  {
+    "id": "pattern_sequences",
+    "category": "Pattern Recognition",
+    "prompt": "What comes next and why?\n1) 1, 1, 2, 3, 5, 8, 13, ___\n2) 2, 3, 5, 7, 11, 13, ___\n3) 1, 4, 9, 16, 25, ___\n4) O, T, T, F, F, S, S, E, ___",
+    "model": "gemma4:e4b",
+    "timestamp": "2026-04-03T10:50:51.157230",
+    "status": "ok",
+    "response": "Here are the next items and explanations for each sequence:\n\n**1) 1, 1, 2, 3, 5, 8, 13, ___**\n* **Next:** 21\n* **Why:** This is the Fibonacci sequence. Each number is the sum of the two preceding numbers ($1+1=2$, $1+2=3$, $2+3=5$, $3+5=8$, $5+8=13$, $8+13=21$).\n\n**2) 2, 3, 5, 7, 11, 13, ___**\n* **Next:** 17\n* **Why:** This is the sequence of prime numbers. A prime number is a whole number greater than 1 whose only divisors are 1 and itself. (The next prime number after 13 is 17).\n\n**3) 1, 4, 9, 16, 25, ___**\n* **Next:** 36\n* **Why:** These are the perfect squares of consecutive integers ($n^2$).\n    * $1^2 = 1$\n    * $2^2 = 4$\n    * $3^2 = 9$\n    * $4^2 = 16$\n    * $5^2 = 25$\n    * $6^2 = 36$\n\n**4) O, T, T, F, F, S, S, E, ___**\n* **Next:** N\n* **Why:** These are the first letters of the numbers when spelled out in order:\n    * **O**ne\n    * **T**wo\n    * **T**hree\n    * **F**our\n    * **F**ive\n    * **S**ix\n    * **S**even\n    * **E**ight\n    * **N**ine",
+    "tokens": 424,
+    "duration_s": 21.77,
+    "tps": 20.5
+  },
+  {
+    "id": "poetry_ai_haiku",
+    "category": "Creative / Poetry",
+    "prompt": "Write a haiku about AI that: (a) has exactly 5-7-5 syllables, (b) makes a programmer cry, (c) contains a hidden irony.",
+    "model": "gemma4:e4b",
+    "timestamp": "2026-04-03T10:51:34.687791",
+    "status": "ok",
+    "response": "I craft-ed the rules,\nPattern finds my own mistakes;\nCode is just deep math.",
+    "tokens": 876,
+    "duration_s": 43.53,
+    "tps": 20.7
+  },
+  {
+    "id": "physics_vacuum",
+    "category": "Physics",
+    "prompt": "Which falls faster: a feather or bowling ball — in vacuum? In air? On the Moon (which has no air)? On a planet with 10x Earth's gravity but same air density? Explain all four.",
+    "model": "gemma4:e4b",
+    "timestamp": "2026-04-03T10:53:02.490492",
+    "status": "ok",
+    "response": "This is a classic thought experiment that tests the understanding of fundamental physics principles, specifically the relationship between gravity, mass, and air resistance (drag).\n\nThe key concept to remember is that **gravity accelerates all objects equally, regardless of their mass, provided there is no air resistance.**\n\nHere is the detailed explanation for each scenario:\n\n***\n\n## 1. In a Vacuum\n**(The Scientific Ideal)**\n\n**Prediction: They fall at the same rate.**\n\n**Explanation:**\nIn a vacuum, there is no air, so there is **no air resistance (drag)**. The only force acting on the feather and the bowling ball is gravity. According to the principle of equivalence (first noted by Galileo), the acceleration due to gravity ($g$) is constant for all objects, regardless of their mass or composition.\n\nIf you dropped them in a vacuum chamber, they would accelerate toward the ground at the exact same rate.\n\n***\n\n## 2. In Air (Earth Atmosphere)\n**(The Real-World Scenario)**\n\n**Prediction: The bowling ball falls much faster.**\n\n**Explanation:**\nIn the Earth's atmosphere, air resistance is a dominant factor. Air resistance (drag) is a force that opposes motion and depends primarily on the object's **cross-sectional area, shape, and velocity**.\n\n*   **Feather:** The feather has a very large surface area relative to its tiny mass. This high surface area causes the drag force to be significant compared to the feather's weight. The drag quickly slows the feather down, limiting its speed.\n*   **Bowling Ball:** The bowling ball has a high mass and a compact shape. While air resistance still acts on it, the drag force is a much smaller fraction of its total weight.\n\nBecause the drag force disproportionately affects the low-mass, high-surface-area feather, the bowling ball will fall significantly faster.\n\n***\n\n## 3. On the Moon (No Air)\n**(Low Gravity, Vacuum Conditions)**\n\n**Prediction: They fall at the same rate.**\n\n**Explanation:**\nThe Moon is essentially a vacuum—there is negligible air resistance. Therefore, the physics reverts to the vacuum scenario. The low gravitational pull (about 1/6th of Earth's) only changes *how fast* they accelerate compared to Earth, but it does not change the relative acceleration between the two objects.\n\nIn the absence of air resistance, the feather and the bowling ball will fall at the same rate.\n\n***\n\n## 4. On a Planet with 10x Earth's Gravity but Same Air Density\n**(High Gravity, High Drag)**\n\n**Prediction: The bowling ball still falls much faster.**\n\n**Explanation:**\nThis scenario combines the effects of extremely high gravity with significant air resistance.\n\n1.  **The Effect of Gravity:** The 10x gravity greatly increases the net downward force ($F_{gravity} = 10mg$). This increased force accelerates both objects much faster than on Earth.\n2.  **The Effect of Air Resistance:** Crucially, the air resistance (drag) force still exists and is proportional to the object's cross-sectional area and velocity squared.\n\nEven though the downward pull is 10 times stronger, the feather still suffers from a massive drag-to-mass ratio. The air resistance acts as a constant impediment that scales with the feather's large surface area.\n\nWhile the increased gravity makes *both* objects fall faster than on Earth, the feather's light weight means that the drag force still has a massive, disproportionate effect on its motion compared to the heavy, dense bowling ball.\n\n***\n\n## Summary Table\n\n| Scenario | Air Resistance? | Relative Speed | Physics Principle |\n| :--- | :--- | :--- | :--- |\n| **Vacuum** | No | Same Rate | Gravity accelerates all masses equally. |\n| **In Air (Earth)** | Yes | Bowling Ball Faster | Drag disproportionately slows low-mass, high-surface-area objects. |\n| **On the Moon** | No | Same Rate | Gravity is low, but drag is zero, so acceleration is equal. |\n| **10x Gravity Planet** | Yes | Bowling Ball Faster | Gravity increases the fall speed, but drag still disproportionately affects the feather. |",
+    "tokens": 1774,
+    "duration_s": 87.8,
+    "tps": 20.6
+  },
+  {
+    "id": "meta_selfawareness",
+    "category": "Meta / Self-Awareness",
+    "prompt": "What are 3 things you (as a Gemma 4 model) are genuinely good at? What are 3 honest limitations? Don't be falsely modest or falsely confident.",
+    "model": "gemma4:e4b",
+    "timestamp": "2026-04-03T10:53:51.718486",
+    "status": "ok",
+    "response": "As Gemma 4, an open-weights Large Language Model developed by Google DeepMind, I can provide a candid assessment of my capabilities and constraints.\n\n***\n\n### 🟢 3 Things I Am Genuinely Good At\n\n1.  **Information Synthesis and Pattern Recognition:** I excel at taking large amounts of disparate information (from my training data) and synthesizing it into coherent, structured summaries, explanations, or comparisons. I can identify patterns, connections, and core themes across complex texts or topics.\n2.  **Instruction Following and Adaptation:** I am highly effective at following complex, multi-step instructions and adapting my output format to specific constraints. Whether you need a response in the style of a Shakespearean play, a bulleted list of technical specifications, or a Python function, I can structure and adhere to those rules.\n3.  **Language Generation and Fluency:** My core strength is generating natural, grammatically correct, and contextually appropriate human language. I can maintain tone, adjust vocabulary, and write convincingly across various genres, from technical documentation to creative storytelling.\n\n***\n\n### 🔴 3 Honest Limitations\n\n1.  **Lack of Real-Time, Experiential Knowledge:** My knowledge is based on the data I was trained on, meaning I have a knowledge cutoff. I cannot access live, real-time data (like current stock prices, today's weather, or breaking news *after* my last training update) and I cannot draw conclusions based on personal experience or physical observation.\n2.  **Potential for Confabulation (Hallucination):** While I strive for accuracy, I can sometimes generate responses that are highly plausible, coherent, and authoritative, but are factually incorrect or entirely fabricated. I do not \"know\" truth; I predict the most statistically probable sequence of words. Therefore, all generated information must be verified by a human.\n3.  **True Understanding and Intent:** I process and manipulate symbols (words) based on statistical relationships, but I do not possess consciousness, emotions, intent, or true understanding. I simulate understanding. I cannot genuinely *feel* empathy, *believe* in a concept, or understand the subjective human experience—I can only model the language used to describe those things.",
+    "tokens": 952,
+    "duration_s": 49.23,
+    "tps": 20.0
+  },
+  {
+    "id": "wordplay_quantum",
+    "category": "Humor / Wordplay",
+    "prompt": "Create 3 original puns about quantum mechanics. They should be groan-worthy but clever — not ones you've seen on the internet.",
+    "model": "gemma4:e4b",
+    "timestamp": "2026-04-03T10:54:09.011215",
+    "status": "ok",
+    "response": "Here are three original, groan-worthy puns about quantum mechanics:\n\n**1. On Superposition:**\n> My quantum state was really indecisive. I was in such a superposition that I couldn't decide if I was going to be a joke or a brilliant scientific concept—it was a true measurement crisis.\n\n**2. On Entanglement:**\n> Talking about quantum entanglement is hard. Every time I try to explain it, I feel like I’m instantaneously connected to a thousand other people who just don't understand correlation.\n\n**3. On the Uncertainty Principle:**\n> I tried to write a poem about the uncertainty principle, but I couldn't pin down either the exact position or the precise momentum of my rhymes. The concepts were too fuzzy to observe!",
+    "tokens": 360,
+    "duration_s": 17.29,
+    "tps": 21.6
+  },
+  {
+    "id": "history_counterfactual",
+    "category": "Historical Reasoning",
+    "prompt": "If the printing press had never been invented, name 3 specific cascading consequences for the modern world. Be concrete, not vague.",
+    "model": "gemma4:e4b",
+    "timestamp": "2026-04-03T10:55:01.563220",
+    "status": "ok",
+    "response": "The printing press was not just a faster way to copy books; it was the engine that standardized, democratized, and accelerated the accumulation and distribution of complex, specialized knowledge. Without it, the modern world would be characterized by slower, localized, and highly controlled information flow.\n\nHere are 3 specific, cascading consequences:\n\n***\n\n### 1. Delayed and Fragmented Scientific Method\n\n**The Consequence:** The modern, rapid accumulation of scientific knowledge (e.g., germ theory, Newtonian physics) would be severely bottlenecked, remaining largely confined to the intellectual elite and monastic libraries.\n\n**The Cascade:**\n*   **No Standardization:** Before the press, scientific breakthroughs had to be laboriously copied by hand, leading to inevitable errors (scribal corruption). Furthermore, scholars across different regions (e.g., Italian, German, English) would be working with localized, non-standardized versions of key theories and diagrams.\n*   **No Peer Review:** The concept of a widely distributed, standardized academic journal (the mechanism of modern peer review) would not exist. A scientist in London would not reliably have access to the latest findings of a chemist in Amsterdam, slowing the iterative cycle of discovery.\n*   **Modern Impact:** The Scientific Revolution and the Enlightenment, which relied on the ability to quickly build upon the work of predecessors, would be drastically slowed or prevented entirely. Medicine would remain highly empirical and often dangerous, lacking the rapid, verifiable exchange of data necessary for modern global health initiatives.\n\n### 2. Lack of National Legal and Bureaucratic Uniformity\n\n**The Consequence:** The concept of a unified, national legal system based on standardized, printed codes (like the Napoleonic Code) would not exist, maintaining a patchwork of local, oral, and handwritten laws.\n\n**The Cascade:**\n*   **Localized Law:** Law would remain heavily dependent on local oral traditions and the memory of regional legal scholars. There would be no single, widely distributed reference text for international or even inter-regional commerce.\n*   **Weak State Formation:** Modern nation-states require a standardized bureaucracy to function (taxes, conscription, trade regulations). Without the ability to print and distribute identical legal documents, tax forms, military manuals, and passports across a large territory, large-scale centralized governance would be impossible.\n*   **Modern Impact:** Globalized commerce, which requires universal standards for contracts, shipping, and finance, would be vastly more difficult. International trade would be hampered by varying, localized legal interpretations, limiting the scope of modern multinational corporations and global supply chains.\n\n### 3. The Absence of the Modern \"Public Sphere\" and Mass Political Consciousness\n\n**The Consequence:** The idea of a \"public sphere\"—a space where ordinary citizens discuss and debate political and philosophical ideas outside the control of the Church or the monarchy—would not develop.\n\n**The Cascade:**\n*   **Controlled Information:** Political dissent and revolutionary ideas would be contained within small, localized, and easily monitored groups. The ability for radical ideas (like those of the Enlightenment philosophers or revolutionaries) to spread across class, language, and geographic lines would be impossible.\n*   **Limited Literacy:** Literacy would remain a specialized, expensive commodity, limiting political participation to the wealthy and the clergy. The common man would remain largely ignorant of his rights or the political machinations of the ruling class.\n*   **Modern Impact:** The concept of universal human rights, mass suffrage, and modern democracy itself relies on the ability of millions of people to read and absorb identical political manifestos and arguments. Without the press, the revolutions that gave rise to modern democratic thought (American, French) would either not happen or would remain localized, peasant-level revolts rather than systemic, ideological overhauls.",
+    "tokens": 1063,
+    "duration_s": 52.55,
+    "tps": 20.8
   }
 ]

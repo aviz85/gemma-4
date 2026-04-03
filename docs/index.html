@@ -280,14 +280,14 @@ function render() {
 
     // Model tabs
     document.getElementById('model-tabs').innerHTML = testedModels.map(m =>
-      `<button class="mtab ${m===activeModel?'active':''}" onclick="setModel(${JSON.stringify(m)})">${esc(m)}</button>`
+      `<button class="mtab ${m===activeModel?'active':''}" onclick="setModel('${m}')">${esc(m)}</button>`
     ).join('');
 
     // Category filter
     const mData = byModel(activeModel);
     const cats = ['all', ...[...new Set(mData.map(r => r.category))]];
     document.getElementById('filter-bar').innerHTML = cats.map(c =>
-      `<button class="fbtn ${c===activeCat?'active':''}" onclick="setCat(${JSON.stringify(c)})">${esc(c)}</button>`
+      `<button class="fbtn ${c===activeCat?'active':''}" onclick="setCat('${c}')">${esc(c)}</button>`
     ).join('');
 
     // Result cards
@@ -308,7 +308,7 @@ function render() {
         inner += `<div class="rprompt">${esc(r.prompt)}</div>`;
         if (isOk) {
           inner += `<div class="rresp" id="${uid}">${esc(r.response)}</div>
-            <button class="xbtn" onclick="expand(${JSON.stringify(uid)},this)">Expand</button>`;
+            <button class="xbtn" onclick="expand('${uid}',this)">Expand</button>`;
         }
         return `<div class="rcard ${isOk?'':'error'}">${inner}</div>`;
       }).join('');

@@ -742,5 +742,14 @@
     "timestamp": "2026-04-03T12:18:34.256607",
     "status": "error",
     "error": "HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=600)"
+  },
+  {
+    "id": "philosophy_identity",
+    "category": "Philosophy",
+    "prompt": "If the ship of Theseus has all its planks replaced one by one, is it still the same ship? Now extend: if you copy a person's brain neuron-by-neuron into silicon — is it the same person? Does it matter if the original brain is destroyed?",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T12:28:34.657374",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=600)"
   }
 ]

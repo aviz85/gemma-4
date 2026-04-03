@@ -670,5 +670,17 @@
     "tokens": 1873,
     "duration_s": 95.28,
     "tps": 20.2
+  },
+  {
+    "id": "logic_hats",
+    "category": "Logic Puzzle / Hard",
+    "prompt": "Three logicians each wear either a red or blue hat. None can see their own hat. They're told: 'At least one hat is red.' They're asked: 'Can you deduce your own hat color?' All three simultaneously say 'Yes.' What are the hat colors and how did each person reason?",
+    "model": "gemma4:26b",
+    "timestamp": "2026-04-03T11:36:11.712875",
+    "status": "ok",
+    "response": "The hat colors are **Red, Red, and Red**.\n\nTo understand how the logicians reached this conclusion, you have to use a process of **mathematical induction**. Although the prompt presents the question as a single event, the \"simultaneous\" answer implies that the logicians are reacting to the fact that no one was able to deduce their color in previous hypothetical rounds of questioning.\n\nHere is the step-by-step reasoning each logician used:\n\n### 1. The Scenario of One Red Hat\nIf there were only **one** red hat (e.g., Red, Blue, Blue), the person wearing the red hat would look at the two blue hats and immediately know, \"Since there is at least one red hat and I see two blue ones, I must be the red one.\" They would have said \"Yes\" during the very first round of questioning.\n\n### 2. The Scenario of Two Red Hats\nIf there were **two** red hats (e.g., Red, Red, Blue), the two people wearing red would each see one red hat and one blue hat. \n*   They would wait for the first round of questioning to see if the person wearing the single red hat identifies themselves.\n*   When the first round passes and no one says \"Yes,\" the two red-hatted logicians would realize: \"If I were wearing a blue hat, the person wearing the red hat would have seen two blue hats and said 'Yes' in the first round. Since they didn't, I must be wearing a red hat.\"\n*   They would both say \"Yes\" in the second round.\n\n### 3. The Scenario of Three Red Hats (The Actual Scenario)\nIn the actual scenario, all three are wearing **red hats**. \n*   Each logician looks at the others and sees **two red hats**.\n*   At first, they cannot be sure if they are wearing red or blue. They must wait to see if anyone identifies themselves in the first round (the 1-red scenario) or the second round (the 2-red scenario).\n*   When the first round passes with silence (no \"Yes\"), they know there is more than one red hat.\n*   When the second round passes with silence, they all realize: \"If I were wearing a blue hat, the other two would have seen only one red hat and would have identified themselves in the second round. Since they stayed silent, I must be the third red hat.\"\n\nBecause all three logicians are looking at the same configuration (two red hats) and are all perfect logicians, they all reach this same realization at the exact same moment, leading them to **simultaneously** say \"Yes.\"",
+    "tokens": 6514,
+    "duration_s": 369.43,
+    "tps": 18.0
   }
 ]

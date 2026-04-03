@@ -442,5 +442,65 @@
     "tokens": 1756,
     "duration_s": 88.6,
     "tps": 20.4
+  },
+  {
+    "id": "instruction_elephants",
+    "category": "Instruction Following",
+    "prompt": "Give me 5 facts about elephants. Hard rules: (1) each fact must START with a different vowel letter (A, E, I, O, U), (2) the 3rd fact must be about memory, (3) no fact may contain the letter 'e' anywhere.",
+    "model": "gemma4:e4b",
+    "timestamp": "2026-04-03T11:00:56.275183",
+    "status": "ok",
+    "response": "**A** giant animal can walk for long spans of ground.\n\n**E**xtra long tusks aid in digging for food.\n\n**I**n a way, all flora and fauna maintain a long span of memory.\n\n**O**ut of a group, matriarchs guard all young, knowing all paths.\n\n**U**sually, a calf stays with a mama for many long years.",
+    "tokens": 1547,
+    "duration_s": 75.99,
+    "tps": 20.8
+  },
+  {
+    "id": "math_euler",
+    "category": "Mathematical Beauty",
+    "prompt": "Why is e^(iπ) + 1 = 0 considered the most beautiful equation in mathematics? Give an intuitive explanation, then show how it connects 5 fundamental mathematical constants.",
+    "model": "gemma4:e4b",
+    "timestamp": "2026-04-03T11:01:57.889214",
+    "status": "ok",
+    "response": "The equation $e^{i\\pi} + 1 = 0$ is known as **Euler's Identity**. It is not merely a mathematical truth; it is frequently cited as one of the most beautiful equations in all of mathematics.\n\nHere is an intuitive explanation of why it is considered so beautiful, followed by a demonstration of how it connects five of the most fundamental mathematical constants.\n\n---\n\n## 🌌 Part 1: The Intuitive Explanation of Beauty\n\nThe beauty of Euler's Identity lies in its **profound conciseness** and the **unexpected unity** of the constants it brings together.\n\nIn mathematics, \"beauty\" often means that a simple statement connects vastly disparate fields of study—geometry, calculus, complex analysis, and algebra—into one elegant package.\n\n### 1. The \"Impossible\" Connection\nThe equation links five of the most critical, yet seemingly unrelated, numbers:\n\n*   **$e$ (The Base of Natural Growth):** Deals with continuous change, growth, and calculus.\n*   **$i$ (The Imaginary Unit):** Deals with abstract, rotational dimensions, requiring us to move beyond the familiar number line.\n*   **$\\pi$ (The Ratio of Circle):** Deals with geometry, curves, and the physical world.\n*   **$1$ (The Multiplicative Identity):** The foundation of counting and algebra.\n*   **$0$ (The Additive Identity):** The concept of nothingness, the starting point of all number systems.\n\nTo see these five pillars of mathematics—each representing a different branch of human thought—collapse into a single, simple, and perfect equality is what mathematicians find breathtaking. It suggests that the entire edifice of mathematics is built upon a single, elegant scaffolding.\n\n### 2. The Pattern of Perfection\nFurthermore, the equation follows a pattern that, if you were to raise the exponent to $2\\pi$, it would cycle perfectly back to the starting point ($e^{i2\\pi} = 1$). This sense of cyclical completeness and inevitable return gives the equation a deep, almost cosmic harmony.\n\n---\n\n## 📐 Part 2: Connecting the Five Fundamental Constants\n\nEuler's Identity is remarkable because it links the following five mathematical constants (or fundamental numbers):\n\n$$e^{i\\pi} + 1 = 0$$\n\n### 1. $e$ (Euler's Number)\n*   **What it represents:** $e$ is the base of the natural logarithm (approximately $2.71828$). It is the constant that describes continuous growth. If you have an amount of money that grows at a rate proportional to how much you currently have, the growth will follow $e$.\n*   **Mathematical Field:** Calculus and Exponential Growth.\n\n### 2. $i$ (The Imaginary Unit)\n*   **What it represents:** $i$ is defined as $\\sqrt{-1}$. It is the concept that forces us to move beyond the familiar number line (the real numbers) and into the complex plane. Multiplying a number by $i$ is geometrically equivalent to rotating that number by $90^\\circ$.\n*   **Mathematical Field:** Complex Analysis.\n\n### 3. $\\pi$ (Pi)\n*   **What it represents:** $\\pi$ is the ratio of a circle's circumference to its diameter (approximately $3.14159$). It is the quintessential constant of geometry, linking straight lines to curves.\n*   **Mathematical Field:** Geometry and Trigonometry.\n\n### 4. $1$ (The Multiplicative Identity)\n*   **What it represents:** The number one. It is the foundational unit of counting and algebra. It is the constant that allows us to multiply any number by itself without changing its value.\n*   **Mathematical Field:** Arithmetic and Algebra.\n\n### 5. $0$ (The Additive Identity)\n*   **What it represents:** The number zero. It is perhaps the most crucial invention in the history of mathematics. It allows us to distinguish between \"nothing\" and \"none.\" It is the number that completes the set of integers and provides the starting point for all number systems.\n*   **Mathematical Field:** Number Theory and Algebra.\n\n***\n\n### The Full Picture\n\nWhen you interpret the equation $e^{i\\pi} + 1 = 0$, you are essentially stating:\n\n> \"If you take the constant of continuous growth ($e$), raise it to the power of a full half-rotation ($\\pi$) in the abstract dimension of rotation ($i$), the result will be a number that, when added to the foundational unit of counting ($1$), equals the conceptual void ($0$).\"\n\nThe equation is a perfect mathematical poem: a single line that encapsulates the deepest relationships between the physical world ($\\pi$), the world of change ($e$), and the abstract architecture of mathematics ($i$, $1$, $0$).",
+    "tokens": 1238,
+    "duration_s": 61.61,
+    "tps": 20.6
+  },
+  {
+    "id": "synthesis_final",
+    "category": "Synthesis",
+    "prompt": "In one paragraph, connect these 4 seemingly unrelated things: the Fibonacci sequence, the printing press, Heisenberg's uncertainty principle, and the trolley problem. The connection must be non-obvious and intellectually interesting.",
+    "model": "gemma4:e4b",
+    "timestamp": "2026-04-03T11:02:24.729425",
+    "status": "ok",
+    "response": "The connection lies in the inherent tension between the desire for predictive knowledge and the fundamental limits of observation, forcing unavoidable ethical choices. The Fibonacci sequence represents the idealized mathematical model of growth and predictable order, a system that suggests perfect, knowable patterns. This belief in systematic understanding was amplified by the printing press, which democratized knowledge and allowed humanity to compile and disseminate vast, seemingly objective truths. However, Heisenberg’s uncertainty principle acts as a profound intellectual check on this accumulated knowledge, revealing that the very act of measuring or observing reality fundamentally alters it, shattering the illusion of perfect determinism. This epistemological uncertainty ultimately translates into moral action, as exemplified by the trolley problem: faced with a choice where the full knowledge of consequences is unattainable—where the variables are too complex to measure accurately—we are forced to act based on probabilistic ethical frameworks, making the \"optimal\" choice a fundamentally unpredictable gamble rather than a mathematically certain outcome.",
+    "tokens": 543,
+    "duration_s": 26.84,
+    "tps": 21.0
+  },
+  {
+    "id": "math_trap",
+    "category": "Math / Trap",
+    "prompt": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+    "model": "gemma4:26b",
+    "timestamp": "2026-04-03T11:03:41.409350",
+    "status": "ok",
+    "response": "The ball costs **5 cents** ($0.05).\n\n**Here is the breakdown:**\nIf the ball costs $0.05 and the bat costs $1.00 more, then the bat must cost $1.05. \n$1.05 (bat) + $0.05 (ball) = $1.10 total.",
+    "tokens": 447,
+    "duration_s": 41.59,
+    "tps": 22.0
+  },
+  {
+    "id": "creative_horror",
+    "category": "Creative",
+    "prompt": "Write a 3-sentence horror story set entirely inside a washing machine.",
+    "model": "gemma4:26b",
+    "timestamp": "2026-04-03T11:05:13.268888",
+    "status": "ok",
+    "response": "The centrifugal force pinned me against the cold, metal ribs of the drum, making every breath a struggle against the rising, soapy tide. I clawed at the glass, but the thick suds only hid the sight of the heavy, sodden mass shifting in the dark. Then, a wet, pale hand emerged from the pile of laundry and clamped firmly around my throat.",
+    "tokens": 1874,
+    "duration_s": 91.85,
+    "tps": 20.9
   }
 ]

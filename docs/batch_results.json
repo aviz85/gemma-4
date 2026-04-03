@@ -682,5 +682,38 @@
     "tokens": 6514,
     "duration_s": 369.43,
     "tps": 18.0
+  },
+  {
+    "id": "instruction_elephants",
+    "category": "Instruction Following",
+    "prompt": "Give me 5 facts about elephants. Hard rules: (1) each fact must START with a different vowel letter (A, E, I, O, U), (2) the 3rd fact must be about memory, (3) no fact may contain the letter 'e' anywhere.",
+    "model": "gemma4:26b",
+    "timestamp": "2026-04-03T11:46:11.749246",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=600)"
+  },
+  {
+    "id": "math_euler",
+    "category": "Mathematical Beauty",
+    "prompt": "Why is e^(iπ) + 1 = 0 considered the most beautiful equation in mathematics? Give an intuitive explanation, then show how it connects 5 fundamental mathematical constants.",
+    "model": "gemma4:26b",
+    "timestamp": "2026-04-03T11:47:38.594093",
+    "status": "ok",
+    "response": "Euler’s Identity, $e^{i\\pi} + 1 = 0$, is often called \"the most beautiful theorem in mathematics\" because it achieves something that seems impossible: it links five completely different branches of mathematics into a single, simple sentence.\n\nTo mathematicians, beauty is found in **unity and unexpectedness**. The equation is beautiful because it takes constants that appear to have nothing to do with one another and reveals that they are all part of the same underlying fabric.\n\n---\n\n### 1. The Intuitive Explanation: The \"Growth and Rotation\" Analogy\n\nTo understand why this equation works without getting lost in heavy calculus, you have to change how you view numbers. Instead of thinking of numbers on a straight line, imagine them on a **map** (the Complex Plane), where the horizontal axis is \"real\" numbers and the vertical axis is \"imaginary\" numbers.\n\n**The Components of the Motion:**\n\n*   **$e$ (The Engine of Growth):** In mathematics, $e$ is the base of continuous growth. If you have $e^x$, it represents a process that is constantly growing at a rate proportional to its current size.\n*   **$i$ (The Steering Wheel):** In the complex plane, multiplying a number by $i$ does not change its size; it simply **rotates** it by 90 degrees. It turns \"outward growth\" into \"sideways growth.\"\n*   **$\\pi$ (The Distance):** $\\pi$ is the fundamental constant of circles. It represents the \"distance\" or \"angle\" required to complete a specific portion of a rotation.\n\n**Putting it together:**\nImagine you are standing at the number **1** on your map. \n\n1.  The $e$ tells you that you are going to grow. \n2.  However, the $i$ in the exponent acts like a steering wheel. Instead of growing \"outward\" (getting larger and larger away from zero), the $i$ forces your growth to always be perpendicular to your current position. \n3.  When you grow perpendicularly to your distance from the center, you don't move in a straight line; **you move in a circle.**\n4.  The $\\pi$ tells you how far to \"steer.\" Since $\\pi$ is the measure of a half-circle (in radians), the equation is essentially saying: *\"Start at 1, and rotate halfway around the center.\"*\n\nIf you start at **1** and rotate halfway around the center of the map, where do you land? You land exactly at **$-1$**. \n\nTherefore, $e^{i\\pi} = -1$. Add $1$ to both sides, and you get $e^{i\\pi} + 1 = 0$.\n\n---\n\n### 2. The Connection of the 5 Fundamental Constants\n\nThe true \"magic\" of the equation lies in the fact that it acts as a bridge between five distinct mathematical universes:\n\n| Constant | Mathematical Domain | Role in the Equation |\n| :--- | :--- | :--- |\n| **$0$** | **Arithmetic / Number Theory** | The additive identity; the concept of nothingness and the foundation of all counting. |\n| **$1$** | **Arithmetic / Algebra** | The multiplicative identity; the fundamental unit from which all other numbers are built. |\n| **$e$** | **Calculus / Analysis** | The base of natural logarithms; the constant representing continuous growth and change. |\n| **$i$** | **Algebra / Complex Numbers** | The imaginary unit; the bridge between real numbers and the rotation of the complex plane. |\n| **$\\pi$** | **Geometry / Trigonometry** | The ratio of a circle's circumference to its diameter; the constant of all periodic and circular motion. |\n\n### Summary\nBefore this identity was understood, **Geometry** (circles/$\\pi$), **Calculus** (growth/$e$), and **Algebra** (imaginary numbers/$i$) were viewed as separate disciplines. Euler’s Identity proved that they are not separate; they are different languages describing the same universal truth. It is the mathematical equivalent of finding a single DNA strand that connects a human, a blue whale, and a blade of grass.",
+    "tokens": 1624,
+    "duration_s": 86.84,
+    "tps": 19.4
+  },
+  {
+    "id": "synthesis_final",
+    "category": "Synthesis",
+    "prompt": "In one paragraph, connect these 4 seemingly unrelated things: the Fibonacci sequence, the printing press, Heisenberg's uncertainty principle, and the trolley problem. The connection must be non-obvious and intellectually interesting.",
+    "model": "gemma4:26b",
+    "timestamp": "2026-04-03T11:48:33.909522",
+    "status": "ok",
+    "response": "The architecture of human progress relies on the tension between the predictable, recursive patterns of nature, such as the growth-defining Fibonacci sequence, and our technological drive to codify and mass-produce these truths through the printing press. Yet, this pursuit of total, documented certainty is fundamentally checked by Heisenberg’s uncertainty principle, which reveals that the very act of observing and recording the world inevitably distorts it, ensuring that a perfectly transparent, objective record remains forever out of reach. We are thus trapped in the moral vacuum of the trolley problem: forced to navigate high-stakes, deterministic decisions within a landscape where the ultimate trajectory of our actions—though perhaps following a discernible logic—is shrouded in an irreducible, fundamental fog of unpredictability.",
+    "tokens": 1075,
+    "duration_s": 55.31,
+    "tps": 20.1
   }
 ]

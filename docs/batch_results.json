@@ -733,5 +733,14 @@
     "timestamp": "2026-04-03T12:08:34.063486",
     "status": "error",
     "error": "HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=600)"
+  },
+  {
+    "id": "code_palindromes",
+    "category": "Code",
+    "prompt": "Write a Python one-liner that finds all palindromes in a list of strings. Then show a version that handles punctuation and mixed case.",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T12:18:34.256607",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=600)"
   }
 ]

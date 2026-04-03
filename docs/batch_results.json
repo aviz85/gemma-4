@@ -178,5 +178,41 @@
     "tokens": 1777,
     "duration_s": 49.44,
     "tps": 38.0
+  },
+  {
+    "id": "decision_expected_value",
+    "category": "Decision Theory",
+    "prompt": "You have $1000 to invest:\n- Option A: 100% chance of $1100\n- Option B: 50% chance of $2500, 50% chance of $0\nWhich do you choose? Does your answer change if you only have $10? Or if you have $10 million? What does this reveal about rational decision-making?",
+    "model": "gemma4:e2b",
+    "timestamp": "2026-04-03T10:42:37.340043",
+    "status": "ok",
+    "response": "This scenario is a classic example used in decision theory and behavioral economics to illustrate the difference between **Expected Value (EV)** and **Risk Tolerance**.\n\nHere is the analysis for each scenario:\n\n---\n\n### 1. The $1000 Scenario\n\n**Option A:** 100% chance of $1100.\n*   **Expected Value (EV):** $1100\n\n**Option B:** 50% chance of $2500, 50% chance of $0.\n*   **Expected Value (EV):** $(0.50 \\times \\$2500) + (0.50 \\times \\$0) = \\$1250$\n\n**Decision based purely on Expected Value:** Option B ($\\$1250 > \\$1100$).\n\n**Conclusion for $1000:** A purely mathematical, risk-neutral decision-maker would choose **Option B**, as it offers a higher expected payoff.\n\n---\n\n### 2. The $10 Scenario\n\nWe apply the same logic to the smaller investment:\n\n**Option A:** 100% chance of $11.\n*   **EV:** $11\n\n**Option B:** 50% chance of $2500 / 1000 = \\$2.50$, 50% chance of $0.\n*   **EV:** $(0.50 \\times \\$2.50) + (0.50 \\times \\$0) = \\$1.25$\n\n**Decision based purely on Expected Value:** Option B ($\\$1.25 > \\$11$).\n\n**Conclusion for $10:** The decision based purely on Expected Value still favors **Option B**.\n\n---\n\n### 3. The $10 Million Scenario\n\nWe apply the same logic to the large investment:\n\n**Option A:** 100% chance of $11,000,000.\n*   **EV:** $11,000,000\n\n**Option B:** 50% chance of $2500 \\times 10,000,000 = \\$25,000,000$, 50% chance of $0.\n*   **EV:** $(0.50 \\times \\$25,000,000) + (0.50 \\times \\$0) = \\$12,500,000$\n\n**Decision based purely on Expected Value:** Option B ($\\$12,500,000 > \\$11,000,000$).\n\n**Conclusion for $10 Million:** The decision based purely on Expected Value still favors **Option B**.\n\n---\n\n## What This Reveals About Rational Decision-Making\n\nThe fact that the decision based purely on Expected Value remains the same across all scales (whether you have $1000, $10, or $10 million) reveals a critical insight about rational decision-making:\n\n### 1. The Importance of Expected Value (EV)\n\nIn the absence of specific risk aversion, a rational agent seeks to maximize their expected outcome. Since Option B consistently has a higher EV, it is the mathematically superior choice.\n\n### 2. The Role of Risk Tolerance (The Caveat)\n\nWhile the EV calculation points to Option B, it fails to account for **risk aversion**. A truly rational decision-maker must weigh the potential gain against the potential loss.\n\n*   **Option A (The Certainty):** Offers a guaranteed, albeit smaller, payoff. This appeals to risk-averse individuals who prioritize avoiding catastrophic loss.\n*   **Option B (The Volatility):** Offers a significantly higher potential reward, but carries the risk of total loss. This appeals to risk-seeking individuals who are willing to gamble for a larger potential gain.\n\n**What the scale reveals:**\n\n*   **Small Stakes ($1000):** The risk of losing the entire investment is manageable. The preference for the higher EV (Option B) is easily accepted.\n*   **Large Stakes ($10 Million):** The potential loss in Option B (losing $10 million) is catastrophic. For a risk-averse investor, the certainty of Option A becomes highly appealing, even if its expected value is lower.\n\n**In summary:**\n\nRational decision-making is not just about calculating the highest average outcome; it is about calculating the outcome that best aligns with the individual's **risk tolerance** and **utility function**. The mathematical calculation (EV) provides the necessary starting point, but the final choice depends on the psychological weight placed on the potential downside.",
+    "tokens": 1759,
+    "duration_s": 48.29,
+    "tps": 38.3
+  },
+  {
+    "id": "logic_hats",
+    "category": "Logic Puzzle / Hard",
+    "prompt": "Three logicians each wear either a red or blue hat. None can see their own hat. They're told: 'At least one hat is red.' They're asked: 'Can you deduce your own hat color?' All three simultaneously say 'Yes.' What are the hat colors and how did each person reason?",
+    "model": "gemma4:e2b",
+    "timestamp": "2026-04-03T10:43:50.072387",
+    "status": "ok",
+    "response": "This is a classic logic puzzle that relies on the concept of common knowledge and iterative deduction (even though they speak simultaneously, their deduction process is based on the potential silence of others).\n\nThe only way all three logicians can simultaneously deduce their hat color, given only the premise that \"at least one hat is red,\" is if the hats are:\n\n**Hat Colors: Red, Red, Red (R, R, R)**\n\n---\n\n### The Reasoning Process\n\nThe key to solving this lies in considering the possibility that there are fewer red hats, and seeing how that possibility contradicts the fact that everyone *did* deduce their color.\n\nLet's analyze the situation from the perspective of any single logician (Person A).\n\n**1. The Premise:** At least one hat is red ($N_R \\ge 1$).\n\n**2. Person A's View:** Person A sees the hats of Person B and Person C. Let's assume A sees two Red hats (R, R).\n\n**3. The Hypothetical Scenario (If there were only two Red hats):**\nSuppose the actual arrangement was (R, R, B).\n*   Person A sees (R, B).\n*   Person B sees (R, B).\n*   Person C sees (R, R).\n\nIf the actual configuration was (R, R, B), Person C (wearing Blue) would see two Red hats. Person C would reason:\n*   \"I see two Red hats (on A and B). The premise is that $N_R \\ge 1$. If I were also Red, then $N_R=3$. If I were Blue, then $N_R=2$. Since I cannot distinguish between $N_R=2$ and $N_R=3$ just by looking at A and B, I cannot deduce my color immediately.\"\n\n**4. The Deduction (Why R, R, R must be the case):**\nFor the logicians to deduce their color simultaneously, it must be the case that the configuration is so constrained that the only possibility consistent with the shared knowledge is the one where the number of red hats is maximal, thereby eliminating all other possibilities where deduction would have been impossible.\n\nIf the hats were (R, R, R):\n*   **Person A** sees (R, R). A knows that if A were Blue, the total number of red hats would be $N_R=2$.\n*   **Person B** sees (R, R). B knows that if B were Blue, the total number of red hats would be $N_R=2$.\n*   **Person C** sees (R, R). C knows that if C were Blue, the total number of red hats would be $N_R=2$.\n\nSince the puzzle states they *all* deduced their color, it implies that the only configuration that forces a unique deduction for everyone is the one where the constraint $N_R \\ge 1$ is pushed to its maximum limit, forcing the conclusion that everyone must be Red.",
+    "tokens": 2590,
+    "duration_s": 72.73,
+    "tps": 37.2
+  },
+  {
+    "id": "instruction_elephants",
+    "category": "Instruction Following",
+    "prompt": "Give me 5 facts about elephants. Hard rules: (1) each fact must START with a different vowel letter (A, E, I, O, U), (2) the 3rd fact must be about memory, (3) no fact may contain the letter 'e' anywhere.",
+    "model": "gemma4:e2b",
+    "timestamp": "2026-04-03T10:44:08.849739",
+    "status": "ok",
+    "response": "**A**ll of its skin is thick and gray.\n\n**E**normous bulk aids in strong social bonds.\n\n**I**n many ways, a long past is held in mind. (Fact about memory)\n\n**O**ut of vast groups, a calf is a strong unit.\n\n**U**niquely, its trunk aids in food grabbing.",
+    "tokens": 654,
+    "duration_s": 18.78,
+    "tps": 37.0
   }
 ]

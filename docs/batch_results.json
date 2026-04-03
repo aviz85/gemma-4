@@ -574,5 +574,29 @@
     "tokens": 2189,
     "duration_s": 117.22,
     "tps": 19.5
+  },
+  {
+    "id": "pattern_sequences",
+    "category": "Pattern Recognition",
+    "prompt": "What comes next and why?\n1) 1, 1, 2, 3, 5, 8, 13, ___\n2) 2, 3, 5, 7, 11, 13, ___\n3) 1, 4, 9, 16, 25, ___\n4) O, T, T, F, F, S, S, E, ___",
+    "model": "gemma4:26b",
+    "timestamp": "2026-04-03T11:16:20.517197",
+    "status": "ok",
+    "response": "Here are the answers and the logic behind each sequence:\n\n**1) 21**\n**Why:** This is the **Fibonacci sequence**. Each number is the sum of the two preceding numbers (8 + 13 = 21).\n\n**2) 17**\n**Why:** This is the sequence of **prime numbers** (numbers greater than 1 that can only be divided by 1 and themselves). 17 is the next prime number after 13.\n\n**3) 36**\n**Why:** This is a sequence of **perfect squares**.\n($1^2=1, 2^2=4, 3^2=9, 4^2=16, 5^2=25$). The next is $6^2=36$.\n\n**4) N**\n**Why:** These are the **first letters of the counting numbers** in English:\n(**O**ne, **T**wo, **T**hree, **F**our, **F**ive, **S**ix, **S**even, **E**ight...). The next number is **N**ine.",
+    "tokens": 856,
+    "duration_s": 43.43,
+    "tps": 20.8
+  },
+  {
+    "id": "poetry_ai_haiku",
+    "category": "Creative / Poetry",
+    "prompt": "Write a haiku about AI that: (a) has exactly 5-7-5 syllables, (b) makes a programmer cry, (c) contains a hidden irony.",
+    "model": "gemma4:26b",
+    "timestamp": "2026-04-03T11:20:00.405481",
+    "status": "ok",
+    "response": "Perfect code arrives,\nFlawless, yet no one can read,\nThe crash is coming.",
+    "tokens": 4143,
+    "duration_s": 219.88,
+    "tps": 19.3
   }
 ]

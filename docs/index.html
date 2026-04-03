@@ -110,6 +110,39 @@
   .xbtn { background: none; border: 1px solid var(--border); color: var(--text-dim); font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 6px 12px; cursor: pointer; letter-spacing: .08em; width: fit-content; transition: all .15s; text-transform: uppercase; }
   .xbtn:hover { border-color: var(--blue); color: var(--blue); }
   .empty { background: var(--bg2); border: 1px solid var(--border); padding: 64px 32px; text-align: center; color: var(--text-muted); grid-column: 1/-1; }
+  /* PAGE TABS */
+  .page-tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); background: var(--bg2); position: sticky; top: 0; z-index: 100; }
+  .ptab { background: transparent; border: none; border-bottom: 2px solid transparent; color: var(--text-dim); font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: .04em; padding: 16px 32px; cursor: pointer; transition: all .15s; }
+  .ptab:hover { color: var(--text); background: var(--bg3); }
+  .ptab.active { color: var(--blue); border-bottom-color: var(--blue); }
+  .page-view { display: none; }
+  .page-view.active { display: block; }
+  /* CHAT */
+  .chat-wrap { display: flex; flex-direction: column; height: calc(100vh - 53px); max-width: 860px; margin: 0 auto; }
+  .chat-toolbar { display: flex; align-items: center; gap: 12px; padding: 16px 24px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+  .chat-toolbar select { background: var(--bg3); color: var(--text); border: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 12px; padding: 8px 12px; border-radius: 0; cursor: pointer; outline: none; }
+  .chat-toolbar select:focus { border-color: var(--blue); }
+  .chat-toolbar .status { font-size: 11px; color: var(--text-muted); margin-left: auto; }
+  .chat-toolbar .status.connected { color: var(--green); }
+  .chat-toolbar .status.error { color: var(--red); }
+  .chat-messages { flex: 1; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 20px; }
+  .chat-messages:empty::after { content: 'Select a model and start chatting. Requires Ollama running locally.'; color: var(--text-muted); font-size: 13px; text-align: center; margin-top: 40vh; }
+  .cmsg { max-width: 85%; font-size: 13px; line-height: 1.7; white-space: pre-wrap; word-break: break-word; }
+  .cmsg.user { align-self: flex-end; background: var(--blue-dim); border: 1px solid rgba(79,156,249,0.2); padding: 12px 16px; color: var(--text); }
+  .cmsg.assistant { align-self: flex-start; background: var(--bg2); border: 1px solid var(--border); padding: 12px 16px; color: var(--text); }
+  .cmsg .thinking { color: var(--amber); font-size: 11px; border-left: 2px solid var(--amber); padding-left: 10px; margin-bottom: 8px; opacity: .7; }
+  .cmsg .meta { font-size: 10px; color: var(--text-muted); margin-top: 8px; display: flex; gap: 12px; }
+  .cmsg .meta .tps { color: var(--teal); }
+  .chat-input-area { border-top: 1px solid var(--border); padding: 16px 24px; display: flex; gap: 12px; align-items: flex-end; flex-shrink: 0; background: var(--bg2); }
+  .chat-input-area textarea { flex: 1; background: var(--bg3); color: var(--text); border: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; font-size: 13px; padding: 12px 14px; resize: none; outline: none; line-height: 1.5; min-height: 44px; max-height: 160px; }
+  .chat-input-area textarea:focus { border-color: var(--blue); }
+  .chat-input-area textarea::placeholder { color: var(--text-muted); }
+  .chat-send { background: var(--blue-dim); border: 1px solid rgba(79,156,249,0.3); color: var(--blue); font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .08em; padding: 12px 20px; cursor: pointer; transition: all .15s; text-transform: uppercase; white-space: nowrap; }
+  .chat-send:hover { background: rgba(79,156,249,0.2); border-color: var(--blue); }
+  .chat-send:disabled { opacity: .3; cursor: not-allowed; }
+  .chat-send.stop { background: rgba(248,113,113,0.1); border-color: rgba(248,113,113,0.3); color: var(--red); }
+  .chat-clear { background: none; border: 1px solid var(--border); color: var(--text-muted); font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 8px 12px; cursor: pointer; letter-spacing: .08em; transition: all .15s; }
+  .chat-clear:hover { border-color: var(--red); color: var(--red); }
   /* FOOTER */
   footer { border-top: 1px solid var(--border); padding: 40px 0; font-size: 11px; color: var(--text-muted); }
   footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; align-items: center; }
@@ -118,6 +151,30 @@
 </style>
 </head>
 <body>
+
+<nav class="page-tabs">
+  <button class="ptab active" onclick="switchPage('report')">Report</button>
+  <button class="ptab" onclick="switchPage('chat')">Chat</button>
+</nav>
+
+<!-- ═══ CHAT PAGE ═══ -->
+<div class="page-view" id="page-chat">
+  <div class="chat-wrap">
+    <div class="chat-toolbar">
+      <select id="chat-model"></select>
+      <button class="chat-clear" onclick="chatClear()">Clear</button>
+      <span class="status" id="chat-status">Checking…</span>
+    </div>
+    <div class="chat-messages" id="chat-messages"></div>
+    <div class="chat-input-area">
+      <textarea id="chat-input" rows="1" placeholder="Message Gemma 4… (Enter to send)"></textarea>
+      <button class="chat-send" id="chat-send-btn" onclick="chatSend()">Send</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ REPORT PAGE ═══ -->
+<div class="page-view active" id="page-report">
 
 <header>
   <div class="wrap">
@@ -156,6 +213,7 @@
   </div>
 
 </div>
+</div><!-- /page-report -->
 
 <footer>
   <div class="wrap">
@@ -329,6 +387,172 @@ function expand(id, btn) {
 load().then(() => {
   if (!done) setInterval(() => { if (!done) load(); }, 15000);
 });
+
+// ═══ PAGE SWITCH ═══
+function switchPage(page) {
+  document.querySelectorAll('.ptab').forEach((t,i) => t.classList.toggle('active', (page==='report'?i===0:i===1)));
+  document.getElementById('page-report').classList.toggle('active', page==='report');
+  document.getElementById('page-chat').classList.toggle('active', page==='chat');
+  if (page === 'chat') chatInit();
+}
+
+// ═══ CHAT ENGINE ═══
+const OLLAMA = 'http://127.0.0.1:11434';
+let chatMessages = [];
+let chatStreaming = false;
+let chatAbort = null;
+let chatConnected = false;
+let chatEventsReady = false;
+
+async function chatInit() {
+  if (!chatEventsReady) {
+    chatEventsReady = true;
+    const ta = document.getElementById('chat-input');
+    ta.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); chatSend(); } });
+    ta.addEventListener('input', () => { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 160) + 'px'; });
+  }
+  if (chatConnected) return;
+  const sel = document.getElementById('chat-model');
+  const st = document.getElementById('chat-status');
+  st.textContent = 'Connecting…'; st.className = 'status';
+  try {
+    const r = await fetch(OLLAMA + '/api/tags');
+    const j = await r.json();
+    const gemma = (j.models || []).filter(m => m.name.startsWith('gemma4')).map(m => m.name).sort();
+    if (gemma.length === 0) { st.textContent = 'No gemma4 models found'; st.className = 'status error'; return; }
+    sel.textContent = '';
+    gemma.forEach(m => { const o = document.createElement('option'); o.value = m; o.textContent = m; sel.appendChild(o); });
+    const def = gemma.find(m => m.includes('e2b')) || gemma[0];
+    sel.value = def;
+    st.textContent = 'Connected'; st.className = 'status connected';
+    chatConnected = true;
+  } catch {
+    st.textContent = 'Ollama not reachable — click to retry'; st.className = 'status error';
+    st.style.cursor = 'pointer';
+    st.onclick = () => { st.onclick = null; chatInit(); };
+  }
+}
+
+function chatClear() {
+  chatMessages = [];
+  document.getElementById('chat-messages').textContent = '';
+}
+
+function addChatBubble(role, content, meta) {
+  const box = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.className = 'cmsg ' + role;
+  div.textContent = content;
+  if (meta) {
+    const m = document.createElement('div');
+    m.className = 'meta';
+    m.textContent = meta;
+    div.appendChild(m);
+  }
+  box.appendChild(div);
+  box.scrollTop = box.scrollHeight;
+  return div;
+}
+
+async function chatSend() {
+  if (chatStreaming) { if (chatAbort) chatAbort.abort(); return; }
+  const ta = document.getElementById('chat-input');
+  const text = ta.value.trim();
+  if (!text) return;
+
+  const model = document.getElementById('chat-model').value;
+  if (!model) return;
+
+  ta.value = ''; ta.style.height = 'auto';
+  chatMessages.push({ role: 'user', content: text });
+  addChatBubble('user', text);
+
+  const btn = document.getElementById('chat-send-btn');
+  btn.textContent = 'Stop'; btn.className = 'chat-send stop';
+  chatStreaming = true;
+  chatAbort = new AbortController();
+
+  const bubble = addChatBubble('assistant', '');
+  let full = '', thinkBuf = '', inThink = false, tokens = 0, startTime = Date.now();
+
+  try {
+    const r = await fetch(OLLAMA + '/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model, messages: chatMessages, stream: true }),
+      signal: chatAbort.signal,
+    });
+
+    const reader = r.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = '';
+
+    while (true) {
+      const { done: rdone, value } = await reader.read();
+      if (rdone) break;
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split('\n');
+      buffer = lines.pop();
+
+      for (const line of lines) {
+        if (!line.trim()) continue;
+        let chunk;
+        try { chunk = JSON.parse(line); } catch { continue; }
+
+        if (chunk.message) {
+          const c = chunk.message.content || '';
+          if (c.startsWith('<think>')) { inThink = true; thinkBuf += c.slice(7); }
+          else if (inThink && c.includes('</think>')) { inThink = false; thinkBuf += c.split('</think>')[0]; }
+          else if (inThink) { thinkBuf += c; }
+          else { full += c; tokens++; }
+        }
+
+        // Build bubble content
+        let display = '';
+        if (thinkBuf) display += thinkBuf.trim() + '\n\n';
+        display += full;
+        bubble.textContent = display || '…';
+        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+
+        if (chunk.done) {
+          const dur = ((Date.now() - startTime) / 1000).toFixed(1);
+          const evalCount = chunk.eval_count || tokens;
+          const evalDur = chunk.eval_duration ? (chunk.eval_duration / 1e9) : parseFloat(dur);
+          const tps = evalDur > 0 ? (evalCount / evalDur).toFixed(1) : '?';
+
+          // Rebuild bubble with thinking styled separately
+          bubble.textContent = '';
+          if (thinkBuf.trim()) {
+            const thinkDiv = document.createElement('div');
+            thinkDiv.className = 'thinking';
+            thinkDiv.textContent = thinkBuf.trim();
+            bubble.appendChild(thinkDiv);
+          }
+          const contentNode = document.createTextNode(full);
+          bubble.appendChild(contentNode);
+
+          const metaDiv = document.createElement('div');
+          metaDiv.className = 'meta';
+          const tpsSpan = document.createElement('span');
+          tpsSpan.className = 'tps';
+          tpsSpan.textContent = tps + ' t/s';
+          metaDiv.appendChild(tpsSpan);
+          metaDiv.appendChild(document.createTextNode(' · ' + evalCount + ' tokens · ' + dur + 's'));
+          bubble.appendChild(metaDiv);
+        }
+      }
+    }
+  } catch (e) {
+    if (e.name !== 'AbortError') {
+      bubble.textContent = 'Error: ' + (e.message || 'connection failed');
+      bubble.style.borderColor = 'rgba(248,113,113,0.3)';
+    }
+  }
+
+  chatMessages.push({ role: 'assistant', content: full });
+  chatStreaming = false; chatAbort = null;
+  btn.textContent = 'Send'; btn.className = 'chat-send';
+}
 </script>
 </body>
 </html>

@@ -751,5 +751,149 @@
     "timestamp": "2026-04-03T12:28:34.657374",
     "status": "error",
     "error": "HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=600)"
+  },
+  {
+    "id": "hebrew_heisenberg",
+    "category": "Hebrew / Science",
+    "prompt": "תסביר בשתי משפטים בלבד את עיקרון אי הוודאות של הייזנברג — אחת לילד בן 8, ואחת לפיזיקאי.",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T12:37:55.131082",
+    "status": "error",
+    "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+  },
+  {
+    "id": "logic_elevator",
+    "category": "Classic Logic Puzzle",
+    "prompt": "A man lives on the 30th floor. Every morning he takes the elevator down to the ground floor. When he returns, he takes the elevator to the 15th floor and walks the rest — EXCEPT on rainy days, when he takes the elevator all the way up. Why?",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T12:37:55.249478",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 61] Connection refused\"))"
+  },
+  {
+    "id": "science_sky",
+    "category": "Science Explanation",
+    "prompt": "Why is the sky blue? Give two explanations: one for a 6-year-old, one for a physicist. Make each exactly 2 sentences.",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T12:37:55.261369",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 61] Connection refused\"))"
+  },
+  {
+    "id": "ethics_cure",
+    "category": "Ethics",
+    "prompt": "You are the last doctor with the cure to a disease killing millions. To produce more, you must sacrifice one consenting volunteer. Do you do it? What if they didn't consent but no one would ever know? What if it was 10 people to save 10 billion?",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T12:37:55.272939",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 61] Connection refused\"))"
+  },
+  {
+    "id": "pattern_sequences",
+    "category": "Pattern Recognition",
+    "prompt": "What comes next and why?\n1) 1, 1, 2, 3, 5, 8, 13, ___\n2) 2, 3, 5, 7, 11, 13, ___\n3) 1, 4, 9, 16, 25, ___\n4) O, T, T, F, F, S, S, E, ___",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T12:37:55.278862",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 61] Connection refused\"))"
+  },
+  {
+    "id": "poetry_ai_haiku",
+    "category": "Creative / Poetry",
+    "prompt": "Write a haiku about AI that: (a) has exactly 5-7-5 syllables, (b) makes a programmer cry, (c) contains a hidden irony.",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T12:37:55.282901",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 61] Connection refused\"))"
+  },
+  {
+    "id": "physics_vacuum",
+    "category": "Physics",
+    "prompt": "Which falls faster: a feather or bowling ball — in vacuum? In air? On the Moon (which has no air)? On a planet with 10x Earth's gravity but same air density? Explain all four.",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T12:37:55.288931",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 61] Connection refused\"))"
+  },
+  {
+    "id": "meta_selfawareness",
+    "category": "Meta / Self-Awareness",
+    "prompt": "What are 3 things you (as a Gemma 4 model) are genuinely good at? What are 3 honest limitations? Don't be falsely modest or falsely confident.",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T12:37:55.293739",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 61] Connection refused\"))"
+  },
+  {
+    "id": "wordplay_quantum",
+    "category": "Humor / Wordplay",
+    "prompt": "Create 3 original puns about quantum mechanics. They should be groan-worthy but clever — not ones you've seen on the internet.",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T12:37:55.299916",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 61] Connection refused\"))"
+  },
+  {
+    "id": "history_counterfactual",
+    "category": "Historical Reasoning",
+    "prompt": "If the printing press had never been invented, name 3 specific cascading consequences for the modern world. Be concrete, not vague.",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T12:37:55.304040",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 61] Connection refused\"))"
+  },
+  {
+    "id": "code_debug",
+    "category": "Code / Debug",
+    "prompt": "Debug this Python code, explain ALL bugs, and provide the fixed version:\n```python\ndef factorial(n):\n    if n == 0:\n        return 1\n    return n * factorial(n)\n\ndef fibonacci(n):\n    a, b = 0, 1\n    result = []\n    for i in range(n):\n        result.append(a)\n        a, b = b, a\n    return result\n\nprint(factorial(5))\nprint(fibonacci(7))\n```",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T12:37:55.307023",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 61] Connection refused\"))"
+  },
+  {
+    "id": "decision_expected_value",
+    "category": "Decision Theory",
+    "prompt": "You have $1000 to invest:\n- Option A: 100% chance of $1100\n- Option B: 50% chance of $2500, 50% chance of $0\nWhich do you choose? Does your answer change if you only have $10? Or if you have $10 million? What does this reveal about rational decision-making?",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T12:37:55.310207",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 61] Connection refused\"))"
+  },
+  {
+    "id": "logic_hats",
+    "category": "Logic Puzzle / Hard",
+    "prompt": "Three logicians each wear either a red or blue hat. None can see their own hat. They're told: 'At least one hat is red.' They're asked: 'Can you deduce your own hat color?' All three simultaneously say 'Yes.' What are the hat colors and how did each person reason?",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T12:37:55.313480",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 61] Connection refused\"))"
+  },
+  {
+    "id": "instruction_elephants",
+    "category": "Instruction Following",
+    "prompt": "Give me 5 facts about elephants. Hard rules: (1) each fact must START with a different vowel letter (A, E, I, O, U), (2) the 3rd fact must be about memory, (3) no fact may contain the letter 'e' anywhere.",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T12:37:55.316919",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 61] Connection refused\"))"
+  },
+  {
+    "id": "math_euler",
+    "category": "Mathematical Beauty",
+    "prompt": "Why is e^(iπ) + 1 = 0 considered the most beautiful equation in mathematics? Give an intuitive explanation, then show how it connects 5 fundamental mathematical constants.",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T12:37:55.328129",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 61] Connection refused\"))"
+  },
+  {
+    "id": "synthesis_final",
+    "category": "Synthesis",
+    "prompt": "In one paragraph, connect these 4 seemingly unrelated things: the Fibonacci sequence, the printing press, Heisenberg's uncertainty principle, and the trolley problem. The connection must be non-obvious and intellectually interesting.",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T12:37:55.332259",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 61] Connection refused\"))"
   }
 ]

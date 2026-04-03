@@ -715,5 +715,14 @@
     "tokens": 1075,
     "duration_s": 55.31,
     "tps": 20.1
+  },
+  {
+    "id": "math_trap",
+    "category": "Math / Trap",
+    "prompt": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+    "model": "gemma4:31b",
+    "timestamp": "2026-04-03T11:58:33.970664",
+    "status": "error",
+    "error": "HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=600)"
   }
 ]

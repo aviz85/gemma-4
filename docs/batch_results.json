@@ -502,5 +502,53 @@
     "tokens": 1874,
     "duration_s": 91.85,
     "tps": 20.9
+  },
+  {
+    "id": "code_palindromes",
+    "category": "Code",
+    "prompt": "Write a Python one-liner that finds all palindromes in a list of strings. Then show a version that handles punctuation and mixed case.",
+    "model": "gemma4:26b",
+    "timestamp": "2026-04-03T11:06:19.790278",
+    "status": "ok",
+    "response": "### 1. The Simple One-Liner\nThis version assumes the strings are already cleaned (no spaces, no punctuation, and consistent casing).\n\n```python\npalindromes = [s for s in words if s == s[::-1]]\n```\n\n**How it works:**\n*   `s[::-1]` uses Python's slicing syntax to create a reversed copy of the string.\n*   The list comprehension iterates through `words` and keeps only those where the original string matches the reversed version.\n\n---\n\n### 2. The Robust One-Liner (Handles Punctuation and Case)\nTo handle real-world strings like `\"A man, a plan, a canal: Panama\"`, we need to strip non-alphanumeric characters and normalize the case. This version uses the **walrus operator (`:=`)** introduced in Python 3.8 to avoid calculating the \"cleaned\" string twice.\n\n```python\npalindromes = [s for s in words if (c := \"\".join(char.lower() for char in s if char.isalnum())) == c[::-1]]\n```\n\n**How it works:**\n1.  `char.lower() for char in s if char.isalnum()`: This generator expression iterates through every character in the string, converts it to lowercase, and keeps it only if it is a letter or a number (filtering out spaces and punctuation).\n2.  `\"\".join(...)`: Recombines those valid characters into a single \"cleaned\" string.\n3.  `c := ...`: The **walrus operator** assigns this cleaned string to the variable `c` *inside* the list comprehension.\n4.  `c == c[::-1]`: Finally, it compares the cleaned string `c` to its reverse.\n\n---\n\n### Full Executable Example\n\n```python\nwords = [\"Racecar\", \"hello\", \"A man, a plan, a canal: Panama\", \"Python\", \"No 'x' in Nixon!\"]\n\n# 1. Simple version\nsimple = [s for s in words if s == s[::-1]]\nprint(f\"Simple: {simple}\") \n# Output: [] (Because 'Racecar' != 'racecaR')\n\n# 2. Robust version\nrobust = [s for s in words if (c := \"\".join(char.lower() for char in s if char.isalnum())) == c[::-1]]\nprint(f\"Robust: {robust}\")\n# Output: ['A man, a plan, a canal: Panama', \"No 'x' in Nixon!\"]\n```",
+    "tokens": 1168,
+    "duration_s": 66.52,
+    "tps": 18.9
+  },
+  {
+    "id": "philosophy_identity",
+    "category": "Philosophy",
+    "prompt": "If the ship of Theseus has all its planks replaced one by one, is it still the same ship? Now extend: if you copy a person's brain neuron-by-neuron into silicon — is it the same person? Does it matter if the original brain is destroyed?",
+    "model": "gemma4:26b",
+    "timestamp": "2026-04-03T11:07:55.527037",
+    "status": "ok",
+    "response": "These questions move us from the realm of classical metaphysics into the frontier of neuroethics and the philosophy of mind. To answer them, we have to decide what \"identity\" actually is.\n\nThe tension in all these scenarios lies in the conflict between three different definitions of identity: **Materialism** (what you are made of), **Functionalism** (what you do), and **Continuity** (the unbroken chain of your existence).\n\n---\n\n### 1. The Ship of Theseus: Matter vs. Pattern\nThe Ship of Theseus asks if identity is found in the **atoms** or the **arrangement**.\n\n*   **The Mereological View (Matter):** If you believe an object is the sum of its specific parts, then the ship is *not* the same. Once a single original plank is gone, the \"Original Ship\" ceases to exist.\n*   **The Structural View (Pattern):** If you believe identity is the *pattern* or the *form*, then the ship remains the same. As long as the blueprint and the function remain constant, the replacement of parts is irrelevant.\n\n**The Hobbes Complication:** Thomas Hobbes added a twist: If you took all the old, discarded planks and built a second ship, which one is the \"true\" ship? This forces us to realize that \"identity\" is often a linguistic convenience we impose on objects, rather than an inherent property of the universe.\n\n### 2. The Silicon Brain: The Functionalist Leap\nWhen we extend this to a brain, we move from \"objects\" to \"subjects.\" This introduces the concept of **Functionalism**.\n\nIf you replace a neuron with a silicon chip that performs the exact same input-output function, most modern philosophers of mind argue that **the person remains the same.** This is because \"you\" are not the carbon; you are the *information processing* occurring within the architecture.\n\nHowever, a counter-argument exists in **Biological Naturalism** (notably championed by John Searle). This view suggests that consciousness is a biological process, like digestion. You can simulate the chemistry of digestion on a computer, but the computer isn't actually digesting anything. Under this view, the silicon brain is merely a **simulation** of a person—a \"zombie\" that acts like you but has no internal \"light\" of experience.\n\n### 3. Does it matter if the original is destroyed?\nThis is the most harrowing part of the thought experiment, often called the **\"Teleportation Paradox.\"** The answer depends entirely on whether you believe identity requires **Spatio-temporal Continuity.**\n\n#### Scenario A: Gradual Replacement (The \"Smooth\" Transition)\nIf you replace one neuron at a time while the person is awake, there is no break in the stream of consciousness. There is no \"moment\" where the person died. This is the \"Ship of Theseus\" approach. Because there is a continuous chain of memory and awareness, most would argue the person survives. This is **Psychological Continuity.**\n\n#### Scenario B: The Copy-and-Delete (The \"Hard\" Break)\nIf you scan the brain, create a digital copy, and then destroy the biological brain, you have created a **Branching Identity** problem.\n*   **If the original survives:** You now have two beings, both claiming to be \"You.\" Both have your memories and your personality. Since \"You\" cannot be two different people in two different places, the concept of a singular \"Self\" collapses.\n*   **If the original is destroyed:** From the perspective of the silicon copy, the transition was a success. It remembers being the biological human. But from the perspective of the biological human, the lights simply went out. This is **Death.**\n\n### The Conclusion: The Three Definitions of \"Self\"\nWhether the person survives depends on which \"Self\" you are trying to save:\n\n1.  **The Material Self:** If identity is the biological \"meat,\" the person dies the moment the brain is altered.\n2.  **The Psychological Self:** If identity is the \"software\" (memories, personality, patterns), the person survives as long as the data is preserved.\n3.  **The Continuous Self:** If identity is the \"unbroken stream\" of consciousness, the person survives only if the transition is gradual. If there is a \"gap\" (a scan and a rebuild), the original person has died, and a new, identical person has been born.\n\n**The ultimate irony:** If we ever achieve silicon brain replacement, we will likely never know if we \"moved\" into the computer, or if we simply died and were replaced by a very convincing ghost.",
+    "tokens": 1864,
+    "duration_s": 95.73,
+    "tps": 20.2
+  },
+  {
+    "id": "hebrew_heisenberg",
+    "category": "Hebrew / Science",
+    "prompt": "תסביר בשתי משפטים בלבד את עיקרון אי הוודאות של הייזנברג — אחת לילד בן 8, ואחת לפיזיקאי.",
+    "model": "gemma4:26b",
+    "timestamp": "2026-04-03T11:09:55.152800",
+    "status": "ok",
+    "response": "ילד בן 8: אי אפשר לדעת בדיוק גם איפה חלקיק נמצא וגם כמה מהר הוא זז בו זמנית.\nפיזיקאי: לא ניתן למדוד בו-זמנית מיקום ותנע בדיוק מעבר לגבול מסוים, שכן האופרטורים המתאימים אינם מתחלפים.",
+    "tokens": 2306,
+    "duration_s": 119.62,
+    "tps": 19.9
+  },
+  {
+    "id": "logic_elevator",
+    "category": "Classic Logic Puzzle",
+    "prompt": "A man lives on the 30th floor. Every morning he takes the elevator down to the ground floor. When he returns, he takes the elevator to the 15th floor and walks the rest — EXCEPT on rainy days, when he takes the elevator all the way up. Why?",
+    "model": "gemma4:26b",
+    "timestamp": "2026-04-03T11:10:16.752030",
+    "status": "ok",
+    "response": "The man is a **person of short stature** (a dwarf). \n\nHere is the breakdown of why:\n*   **The Problem:** He is too short to reach the button for the 30th floor. He can only reach as high as the button for the 15th floor.\n*   **The Morning:** Going down is easy because the \"Ground\" button is at the bottom of the panel.\n*   **The Exception:** On rainy days, he carries an **umbrella**, which he uses to poke the button for the 30th floor.",
+    "tokens": 441,
+    "duration_s": 21.6,
+    "tps": 21.6
   }
 ]

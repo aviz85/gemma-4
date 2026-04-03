@@ -216,7 +216,21 @@ def main():
     print(f"   Prompts: {len(PROMPTS)}")
     print(f"   Output → {OUTPUT_FILE}\n")
 
+    # Load existing results to avoid overwriting previous model runs
     all_results = []
+    if OUTPUT_FILE.exists():
+        try:
+            all_results = json.loads(OUTPUT_FILE.read_text())
+            existing_models = {r["model"] for r in all_results}
+            models_to_test = [m for m in models_to_test if m not in existing_models]
+            if existing_models:
+                print(f"   Already tested: {existing_models} — skipping")
+            if not models_to_test:
+                print("✅ All models already tested.")
+                return
+        except:
+            all_results = []
+
     summaries = []
     total_start = time.time()
 
